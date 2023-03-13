@@ -8,8 +8,7 @@ function App() {
 
 
   const getData = () => {
-    const ip = 167
-    const url = `http://10.10.60.${ip}/jsonrpc/web.status`
+    const url = `http://10.10.60.167/jsonrpc/web.status`
     axios.get(url)
       .then(res => console.log(res.data))
       .catch(err => console.log(err))
