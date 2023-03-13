@@ -1,9 +1,24 @@
+import axios from 'axios'
+import { useEffect } from 'react'
 import './App.css'
 import Card from './components/Card'
 
 
 function App() {
 
+
+  const getData = () => {
+    const ip = 167
+    const url = `http://10.10.60.${ip}/jsonrpc/web.status`
+    axios.get(url)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+  
 
   return (
     <div className="App">
